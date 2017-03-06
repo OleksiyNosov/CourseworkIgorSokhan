@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace GeometryLibrary
 {
-    class Triangle
+    public class Triangle
     {
         private SmartPoint[] points;
 
