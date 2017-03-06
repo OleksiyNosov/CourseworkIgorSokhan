@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using GeometryLibrary;
 
 namespace ConsoleTests
 {
@@ -10,6 +11,19 @@ namespace ConsoleTests
     {
         static void Main(string[] args)
         {
+            ReadTrianglesFromFile();
+        }
+
+        private static void ReadTrianglesFromFile()
+        {
+            var file = "Triangles.txt";
+
+            var triangles = FileWorker.Read(file);
+
+            foreach (var triangle in triangles)
+            {
+                Console.WriteLine(triangle);
+            }
         }
     }
 }
