@@ -50,6 +50,17 @@ namespace GeometryLibrary
             => new SmartPoint(
                 Convert.ToDouble(x),
                 Convert.ToDouble(y));
-        
+
+        public override bool Equals(object obj)
+            => this == (obj as SmartPoint);
+
+        public static bool operator ==(SmartPoint first, SmartPoint second)
+            => (first.X == second.X) && (first.Y == second.Y);
+
+        public static bool operator !=(SmartPoint first, SmartPoint second)
+            => !(first == second);
+
+
+
     }
 }
