@@ -51,6 +51,9 @@ namespace GeometryLibrary
                 Convert.ToDouble(x),
                 Convert.ToDouble(y));
 
+        public override int GetHashCode()
+            => 1777776;
+
         public override bool Equals(object obj)
             => this == (obj as SmartPoint);
 
