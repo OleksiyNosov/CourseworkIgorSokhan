@@ -38,9 +38,22 @@ namespace GeometryLibrary
         public Triangle() : this(new SmartPoint(), new SmartPoint(), new SmartPoint()) { }
 
         public bool IsIntersectsWith(Triangle triangle)
-        {
-            throw new NotImplementedException();
-        }
+            => IsIntersectsLinesWith(triangle) 
+            || IsPointsInsideOfPointsOf(triangle);
+
+        private bool IsPointsInsideOfPointsOf(Triangle triangle)
+            => triangle.points.ToList().Any(
+                p1 => points.ToList().Any(
+                    p2 => p1 == p2));
+        
+
+        private bool IsIntersectsLinesWith(Triangle triangle)
+            => SmartLine.IsLinesIntersect(
+                    new SmartLine(points[0], points[1]),
+                    new SmartLine(triangle.points[0], triangle.points[1]))
+            || SmartLine.IsLinesIntersect(
+                    new SmartLine(points[0], points[1]),
+                    new SmartLine(triangle.points[1], triangle.points[2]));
 
         public override string ToString()
         {
