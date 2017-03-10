@@ -8,19 +8,21 @@
         Title="MainWindow" Height="350" Width="525">
     <Window.Resources>
         <Style x:Key="ButtonStyle" TargetType="Button">
-            <Setter Property="Margin" Value="0,10,0,0"></Setter>
+            <Setter Property="Margin" Value="5,10,5,0"></Setter>
+            <Setter Property="MinHeight" Value="20"></Setter>
         </Style>
     </Window.Resources>
     
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="1*"></ColumnDefinition>
+            <ColumnDefinition Width="100"></ColumnDefinition>
             <ColumnDefinition Width="4.5*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
 
         <StackPanel Grid.Column="0" 
                     Orientation="Vertical">
             <Button Content="Load And Draw" 
+                    Click="ButtonLoadAndDraw_Click"
                     Style="{StaticResource ButtonStyle}"></Button>
             <Button Content="Edit Data" 
                     Style="{StaticResource ButtonStyle}"></Button>
@@ -29,6 +31,7 @@
             <Button Content="About Author" 
                     Style="{StaticResource ButtonStyle}"></Button>
             <Button Content="Exit" 
+                    Click="ButtonExit_Click"
                     Style="{StaticResource ButtonStyle}"></Button>
         </StackPanel>
 
