@@ -9,6 +9,10 @@ namespace GeometryLibrary
     public class Triangle
     {
         private SmartPoint[] points;
+        public SmartPoint[] Points
+        {
+            get => points;
+        }
 
         public bool IsIsosceles
         {
@@ -23,6 +27,12 @@ namespace GeometryLibrary
 
                 return (edges[0] == edges[1]) || (edges[0] == edges[2]);
             }
+        }
+
+        public SmartPoint this[int index]
+        {
+            get => points[index % points.Length]; 
+            set => points[index % points.Length] = value;
         }
 
         public static Triangle CreateFrom(string[] data)
