@@ -54,5 +54,9 @@
       <Name>GeometryLibrary</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="bin\Debug\Triangles.txt" />
+    <Content Include="bin\Debug\TrianglesInfo.txt" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

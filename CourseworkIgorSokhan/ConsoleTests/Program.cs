@@ -12,6 +12,8 @@ namespace ConsoleTests
         static void Main(string[] args)
         {
             ReadTrianglesFromFile();
+
+            Console.ReadKey();
         }
 
         private static void ReadTrianglesFromFile()
